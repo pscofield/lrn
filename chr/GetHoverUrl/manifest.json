@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+
+  "name": "Get Hover URL",
+  "description": "Gets the URL for the link over which the mouse hovers.",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "soccericon.png",
+    "default_title": "Hover your mouse over a link in webpage to view its value."
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["libs/jquery-3.0.0.js", "libs/hovercard.js", "geturl.js"],
+      "css": ["showurl.css"],
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    "libs/jquery-3.0.0.js",
+    "libs/hovercard.js"
+  ],
+
+  "permissions": [
+    "tabs"
+  ],
+
+  "offline_enabled": true
+}
